@@ -1,12 +1,16 @@
 module.exports = function check(str, bracketsConfig) {
-  const OPEN_BRACKETS =['(', '{', '['];
+  const OPEN_BRACKETS =bracketsConfig;
   const BRACKETS_PAIR = {
     [')'] : '(',
     ['}'] : '{',
     ['['] : ']',
+    ['|'] : '|',
+    ['7'] : '7',
   };
 
- 
+  console.log(str);
+  console.log(bracketsConfig);
+
     let arr = [];
     let z = str.length;
 
@@ -29,5 +33,4 @@ module.exports = function check(str, bracketsConfig) {
        }
     }
   
-
 }
