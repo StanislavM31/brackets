@@ -1,12 +1,12 @@
 module.exports = function check(str, bracketsConfig) {
-  const OPEN_BRACKETS =['(', '{'];
+  const OPEN_BRACKETS =['(', '{', '['];
   const BRACKETS_PAIR = {
     [')'] : '(',
     ['}'] : '{',
     ['['] : ']',
   };
 
-  function loolingForPair(str){
+ 
     let arr = [];
     let z = str.length;
 
@@ -28,6 +28,6 @@ module.exports = function check(str, bracketsConfig) {
          return false;
        }
     }
-  }
+  
 
 }
