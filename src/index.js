@@ -12,6 +12,7 @@ for (let i=0; i< bracketsConfig.length; i++){
 }
 
     let arr = [];
+    console.log(str);
     console.log(OPEN_BRACKETS);
     console.log(CLOSED_BRACKETS);
     console.log(BRACKETS_PAIR);
@@ -38,5 +39,5 @@ for (let i=0; i< bracketsConfig.length; i++){
     }
 }
 
-    return arr.length === 0 ;
+    return (arr.length === 0 || arr.length ===2) ;
 }
