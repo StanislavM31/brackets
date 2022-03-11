@@ -2,6 +2,7 @@ module.exports = function check(str, bracketsConfig) {
   const OPEN_BRACKETS = [];
   const CLOSED_BRACKETS = [];
   const BRACKETS_PAIR = {};
+  const str1 = str;
 
 for (let i=0; i< bracketsConfig.length; i++){
   OPEN_BRACKETS.push(bracketsConfig[i][0]);
@@ -12,32 +13,40 @@ for (let i=0; i< bracketsConfig.length; i++){
 }
 
     let arr = [];
-    console.log(str);
-    console.log(OPEN_BRACKETS);
-    console.log(CLOSED_BRACKETS);
-    console.log(BRACKETS_PAIR);
+
 
     for (let i=0; i < str.length; i++){
       let curSimbol = str[i];
 
       if(OPEN_BRACKETS.includes(curSimbol)) {
         arr.push(curSimbol);
+        if(CLOSED_BRACKETS.includes(curSimbol)){
+          arr.pop();
+        }
         
       } else {
         if (arr.length === 0) {
+          console.log('если массив не пуст',arr);
           return false; 
         }
         
     
        let topElement = arr[arr.length - 1];
 
-       if (BRACKETS_PAIR[curSimbol] === topElement) {
+       if (BRACKETS_PAIR[curSimbol] === topElement ) {
          arr.pop();
        } else {
+        console.log('topElement',arr);
+        
+        console.log(str1);
+        console.log(OPEN_BRACKETS);
+        console.log(CLOSED_BRACKETS);
+        console.log(BRACKETS_PAIR);
          return false;
        }
     }
 }
 
-    return (arr.length === 0 || arr.length ===2) ;
+console.log(arr);
+return (arr.length === 0 || arr.length ===2) ;
 }
